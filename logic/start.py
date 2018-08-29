@@ -1,7 +1,4 @@
-from followLogHander import FollowLogHander
+from unfollowLogManager import UnfollowLogManager
 
-logHandler = FollowLogHander()
-logHandler.setInstName("niclasguenther")
-logHandler.saveDataInDb()
-
-peopleToUnfollow = logHandler.getData()
+logHandler = UnfollowLogManager("niclasguenther")
+peopleToUnfollow = logHandler.getDataFromUnfollowLog()
