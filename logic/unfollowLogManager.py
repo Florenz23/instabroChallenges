@@ -29,10 +29,6 @@ class UnfollowLogManager(object):
     def __init__(self, insta_data_id):
         self.insta_data_id = insta_data_id
 
-    def start(self):
-        self.getDataFromBotLog()
-        self.saveDataInDb()
-
     def correctUnfollowLog(self, userArray):
 
     def getDataFromUnfollowLog(self, days=2, amountUserToUnfollow=0):
@@ -43,5 +39,5 @@ class UnfollowLogManager(object):
 
 if __name__ == "__main__":
     fl = UnfollowLogManager('niclasguenther')
-    users_list = fl.getDataFromDb(days=2, amountUserToUnfollow=20)
     fl.correctUnfollowLog(['insta1', 'insta2', 'insta4'])
+    users_list = fl.getDataFromUnfollowLog(days=2, amountUserToUnfollow=20)
